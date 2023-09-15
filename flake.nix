@@ -9,7 +9,7 @@
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    pwnvim.url = "github:zmre/pwnvim";
+    nvim.url = "github:damianflynn/nvim";
   };
 
   outputs = inputs: {
@@ -53,12 +53,12 @@
               ({pkgs, ...}: {
                 home.stateVersion = "23.05";
                 home.packages = [
-		  pkgs.ripgrep 
-		  pkgs.fd 
-		  pkgs.curl 
-		  pkgs.less 
-		  inputs.pwnvim.packages."aarch64-darwin".default
-		];
+            		  pkgs.ripgrep 
+            		  pkgs.fd 
+            		  pkgs.curl 
+            		  pkgs.less 
+            		  inputs.nvim.packages."aarch64-darwin".default
+            		];
                 home.sessionVariables = {
                   PAGER = "less";
                   CLICOLOR = 1;
